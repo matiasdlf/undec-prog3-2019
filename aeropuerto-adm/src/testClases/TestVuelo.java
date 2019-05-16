@@ -60,10 +60,12 @@ class TestVuelo {
 		//Piloto
 		List<Piloto> pilotos = new ArrayList<Piloto>();
 		LocalDate fechaNac = LocalDate.of(1990, Month.FEBRUARY, 19);
-		Piloto pi01 = new Piloto(001, "Kowalcky", "Edmund", "13130400", fechaNac);
+		Piloto pi01 = new Piloto(1, "Kowalcky", "Edmund", "13130400", fechaNac);
+		pilotos.add(pi01);
 		//Copiloto
 		LocalDate fechaNac2 = LocalDate.of(1989, Month.MAY, 14);
-		Piloto pi02 = new Piloto(002, "Andres", "Iniesta", "34701223", fechaNac2);
+		Piloto pi02 = new Piloto(2, "Andres", "Iniesta", "34701223", fechaNac2);
+		pilotos.add(pi02);
 		//Pasajeros - Asignacion
 		List<Asignacion> pasajeros = new ArrayList<Asignacion>();
 		Pasajero p01 = new Pasajero(1, "20-0303456-8","Diaz", "Bruno", "03825003312");
@@ -97,14 +99,14 @@ class TestVuelo {
 		pasajeros.add(asig09);
 		pasajeros.add(asig10);
 		
-		Vuelo vu0001= new Vuelo("001", salida, fechaHoraSalida, arribo, fechaHoraArribo, aerolinea, pilotos, av01, pasajeros); 
-		assertEquals(0001, vu0001.getCodigoVuelo());
+		Vuelo vu0001= new Vuelo("0001", salida, fechaHoraSalida, arribo, fechaHoraArribo, aerolinea, pilotos, av01, pasajeros); 
+		assertEquals("0001", vu0001.getCodigoVuelo());
 		assertEquals("15-05-2019 15:00:00", vu0001.getFechaHoraSalidaFormato());
 		assertEquals("15-05-2019 18:00:00", vu0001.getFechaHoraArriboFormato());
-		assertEquals("Buenos Aires", vu0001.getSalida().getNombre());
-		assertEquals("Anguinan", vu0001.getArribo().getNombre());
+		assertEquals("Buenos Aires", vu0001.getSalida().getCiudad().getNombre());
+		assertEquals("Anguinan", vu0001.getArribo().getCiudad().getNombre());
 		assertEquals("Fly Bondi", vu0001.getAerolinea().getNombre());
-		assertEquals(001, vu0001.getPilotos().get(1).getIdPiloto());
+		assertEquals(2, vu0001.getPilotos().get(1).getIdPiloto());
 		assertEquals(001, vu0001.getAvion().getIdAvion());
 		assertEquals("20-0303459-8", vu0001.getPasajeros().get(3).getPasajero().getCUIL());
 		

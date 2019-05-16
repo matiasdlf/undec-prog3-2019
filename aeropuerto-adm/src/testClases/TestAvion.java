@@ -39,8 +39,8 @@ class TestAvion {
 		
 		Avion av02 = new Avion(002, "Boeing 747", "G-KELS", asientosAV02);
 		assertEquals(002, av02.getIdAvion());
-		assertEquals("Airbus A320", av02.getModelo());
-		assertEquals("A-ROLS", av02.getMatricula());
+		assertEquals("Boeing 747", av02.getModelo());
+		assertEquals("G-KELS", av02.getMatricula());
 		assertEquals(as04, av02.getListaAsientos().get(3));
 	}
 	
@@ -72,7 +72,7 @@ class TestAvion {
 		Avion av03 = new Avion(003, "Bombardier CRJ200", "F-GOAT", asientosAV03);
 		assertEquals(003, av03.getIdAvion());
 		assertEquals("Bombardier CRJ200", av03.getModelo());
-		assertEquals("A-ROLS", av03.getMatricula());
+		assertEquals("F-GOAT", av03.getMatricula());
 		assertEquals(as02, av03.getListaAsientos().get(1));
 	}
 }

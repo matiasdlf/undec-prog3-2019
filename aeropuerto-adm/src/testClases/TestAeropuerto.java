@@ -15,7 +15,7 @@ class TestAeropuerto {
 		Aeropuerto ae1 = new Aeropuerto(001, "Ezeiza", c1 , "EZ-01");
 		assertEquals(001, ae1.getIdAeropuerto());
 		assertEquals("Ezeiza", ae1.getNombre());
-		assertEquals("Buenos Aires", ae1.getCiudad());
+		assertEquals("Buenos Aires", ae1.getCiudad().getNombre());
 		assertEquals("EZ-01", ae1.getCodigo());	
 	}
 	
@@ -25,7 +25,7 @@ class TestAeropuerto {
 		Aeropuerto ae2 = new Aeropuerto(002, "Aeropuerto Anguinan", c2, "ANG-02");
 		assertEquals(002, ae2.getIdAeropuerto());
 		assertEquals("Aeropuerto Anguinan", ae2.getNombre());
-		assertEquals("Anguinan", ae2.getCiudad());
-		assertEquals("EZ-02", ae2.getCodigo());
+		assertEquals("Anguinan", ae2.getCiudad().getNombre());
+		assertEquals("ANG-02", ae2.getCodigo());
 	}	
 }

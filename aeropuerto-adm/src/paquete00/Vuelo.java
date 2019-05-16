@@ -103,12 +103,12 @@ public class Vuelo {
 	}
 	
 	public String getFechaHoraSalidaFormato() {
-		DateTimeFormatter f = DateTimeFormatter.ofPattern("dd'-'MM'-'Y' 'hh':'mm':'ss");
+		DateTimeFormatter f = DateTimeFormatter.ofPattern("dd'-'MM'-'Y' 'HH':'mm':'ss");
 		return this.fechaHoraSalida.format(f);
 	}
 	
 	public String getFechaHoraArriboFormato() {
-		DateTimeFormatter f = DateTimeFormatter.ofPattern("dd'-'MM'-'Y' 'hh':'mm':'ss");
+		DateTimeFormatter f = DateTimeFormatter.ofPattern("dd'-'MM'-'Y' 'HH':'mm':'ss");
 		return this.fechaHoraArribo.format(f);
 	}
 	

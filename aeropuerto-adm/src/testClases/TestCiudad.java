@@ -13,8 +13,8 @@ class TestCiudad {
 	void testCreaCiudad() {
 		Ciudad c02 = new Ciudad(002, "La Rioja", "5300");
 		assertEquals(002, c02.getIdCiudad());
-		assertEquals("Chilecito", c02.getNombre());
-		assertEquals("5360", c02.getCodigoPostal());
+		assertEquals("La Rioja", c02.getNombre());
+		assertEquals("5300", c02.getCodigoPostal());
 	}
 	
 	@Test
