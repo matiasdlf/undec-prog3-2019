@@ -23,8 +23,7 @@ class TestGestorCompletoAeropuerto {
 	}
 	
 	@Test
-	void testGestorTrearUnAeropuerto() {
-		//Trae por ID
+	void testGestorTrearUnAeropuertoPorId() {
 		GestorAeropuerto ga1 = GestorAeropuerto.getInstancia();
 		assertEquals(true, ga1.traerUno(001));
 		assertEquals(true, ga1.traerUno(002));
@@ -32,15 +31,28 @@ class TestGestorCompletoAeropuerto {
 		assertEquals(false, ga1.traerUno(999));
 	}
 	
+	@Test
 	void testGestorTraerTodosAeropuertos() {
 		GestorAeropuerto ga1 = GestorAeropuerto.getInstancia();
 		assertEquals(3, ga1.traerTodos().size());
 	}
 	
-	void testGestorModificarAeropuerto() {
+	@Test
+	void testGestorModificarCodigoAeropuertoConId() {
 		GestorAeropuerto ga1 = GestorAeropuerto.getInstancia();
-		
+		assertEquals(true, ga1.modificarCodigoConId(001, EZ-05));
 	}
- 	
-
+	
+	@Test
+	void testGestorEliminarAeropuertoConId() {
+		GestorAeropuerto ga1 = GestorAeropuerto.getInstancia();
+		assertEquals(true, ga1.elminarAeropuertoConId(001));
+	}
+	
+	@Test
+	void testGestorEliminarAeropuertoConNombre() {
+		GestorAeropuerto ga1 = GestorAeropuerto.getInstancia();
+		assertEquals(true, ga1.elminarAeropuertoConNombre("Aeropuerto Giovanni Nicelli"));
+	}
+	
 }
