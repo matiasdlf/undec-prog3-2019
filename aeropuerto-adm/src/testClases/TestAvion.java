@@ -15,16 +15,16 @@ class TestAvion {
 	@Test
 	void testCreaAvion() {
 		List<Asiento> asientosAV02 = new ArrayList<Asiento>();
-		Asiento as01 = new Asiento("A01", "001");
-		Asiento as02 = new Asiento("A02", "002");
-		Asiento as03 = new Asiento("A03", "003");
-		Asiento as04 = new Asiento("A04", "004");
-		Asiento as05 = new Asiento("A05", "005");
-		Asiento as06 = new Asiento("B01", "006");
-		Asiento as07 = new Asiento("B02", "007");
-		Asiento as08 = new Asiento("B03", "008");
-		Asiento as09 = new Asiento("B04", "009");
-		Asiento as10 = new Asiento("B05", "010");
+		Asiento as01 = new Asiento(1, "A01");
+		Asiento as02 = new Asiento(2, "A02");
+		Asiento as03 = new Asiento(3, "A03");
+		Asiento as04 = new Asiento(4, "A04");
+		Asiento as05 = new Asiento(5, "A05");
+		Asiento as06 = new Asiento(6, "B01");
+		Asiento as07 = new Asiento(7, "B02");
+		Asiento as08 = new Asiento(8, "B03");
+		Asiento as09 = new Asiento(9, "B04");
+		Asiento as10 = new Asiento(10, "B05");
 		
 		asientosAV02.add(as01);
 		asientosAV02.add(as02);
@@ -38,25 +38,25 @@ class TestAvion {
 		asientosAV02.add(as10);
 		
 		Avion av02 = new Avion(002, "Boeing 747", "G-KELS", asientosAV02);
-		assertEquals(002, av02.getIdAvion);
+		assertEquals(002, av02.getIdAvion());
 		assertEquals("Airbus A320", av02.getModelo());
 		assertEquals("A-ROLS", av02.getMatricula());
-		assertEquals(as04, getListaAsientos().get(3));
+		assertEquals(as04, av02.getListaAsientos().get(3));
 	}
 	
 	@Test
 	void testCreaAvion2() {
 		List<Asiento> asientosAV03 = new ArrayList<Asiento>();
-		Asiento as01 = new Asiento("A01", "001");
-		Asiento as02 = new Asiento("A02", "002");
-		Asiento as03 = new Asiento("A03", "003");
-		Asiento as04 = new Asiento("A04", "004");
-		Asiento as05 = new Asiento("A05", "005");
-		Asiento as06 = new Asiento("B01", "006");
-		Asiento as07 = new Asiento("B02", "007");
-		Asiento as08 = new Asiento("B03", "008");
-		Asiento as09 = new Asiento("B04", "009");
-		Asiento as10 = new Asiento("B05", "010");
+		Asiento as01 = new Asiento(1, "A01");
+		Asiento as02 = new Asiento(2, "A02");
+		Asiento as03 = new Asiento(3, "A03");
+		Asiento as04 = new Asiento(4, "A04");
+		Asiento as05 = new Asiento(5, "A05");
+		Asiento as06 = new Asiento(6, "B01");
+		Asiento as07 = new Asiento(7, "B02");
+		Asiento as08 = new Asiento(8, "B03");
+		Asiento as09 = new Asiento(9, "B04");
+		Asiento as10 = new Asiento(10, "B05");
 		
 		asientosAV03.add(as01);
 		asientosAV03.add(as02);
@@ -69,10 +69,10 @@ class TestAvion {
 		asientosAV03.add(as09);
 		asientosAV03.add(as10);
 		
-		Avion av03 = new Avion(003, "Bombardier CRJ200", "F-GOAT", asientosAV02);
-		assertEquals(003, av03.getIdAvion);
+		Avion av03 = new Avion(003, "Bombardier CRJ200", "F-GOAT", asientosAV03);
+		assertEquals(003, av03.getIdAvion());
 		assertEquals("Bombardier CRJ200", av03.getModelo());
 		assertEquals("A-ROLS", av03.getMatricula());
-		assertEquals(as02, getListaAsientos().get(1));
+		assertEquals(as02, av03.getListaAsientos().get(1));
 	}
 }
