@@ -26,4 +26,46 @@ public class Jugador {
     		throw new JugadorIncompletoException();
     	return new Jugador(idJugador, nombre, fechaNacimiento, estatura, documento);
     }
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public LocalDate getFechaNacimiento() {
+		return fechaNacimiento;
+	}
+
+	public double getEstatura() {
+		return estatura;
+	}
+
+	public String getDocumento() {
+		return documento;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((documento == null) ? 0 : documento.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Jugador other = (Jugador) obj;
+		if (documento == null) {
+			if (other.documento != null)
+				return false;
+		} else if (!documento.equals(other.documento))
+			return false;
+		return true;
+	}
+    
 }

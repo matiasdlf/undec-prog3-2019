@@ -4,10 +4,16 @@ import Interactor.AsignarJugadorUseCase;
 import Mockito.MockitoExtension;
 import Model.Equipo;
 import Model.Jugador;
+import Repositorio.IRepositorioAsignarJugador;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
+
+import Exceptions.EquipoIncompletoException;
+import Exceptions.JugadorAsignadoException;
+import Exceptions.JugadorIncompletoException;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -29,7 +35,7 @@ public class AsignarJugadorUseCaseUnitTest {
     }
 
     @Test
-    public void asignarjugador_JugadorYaAsignado_JugadorAsignadoException() throws EquipoIncompletoException, JugadorIncompletoException {
+    public void asignarjugador_JugadorYaAsignado_JugadorAsignadoException() throws EquipoIncompletoException, JugadorIncompletoException, JugadorAsignadoException {
         Equipo elEquipo = Equipo.instancia(1,"Barcelona", new ArrayList<>());
         Jugador messi= Jugador.instancia(1,"Lionel Messi", LocalDate.of(1987,6,24), 1.7, "12345678");
         elEquipo.asignarJugador(messi);

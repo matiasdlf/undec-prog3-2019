@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import Exceptions.EquipoIncompletoException;
+import Exceptions.JugadorAsignadoException;
 
 public class Equipo {
 
@@ -24,5 +25,10 @@ public class Equipo {
     		throw new EquipoIncompletoException();
     	return new Equipo(idEquipo, nombre);
     }
-
+   
+    public boolean asignarJugador(Jugador elJugador) throws JugadorAsignadoException {
+    	if(jugadores.contains(elJugador))
+    		throw new JugadorAsignadoException();
+    	return jugadores.add(elJugador);
+    }
 }
