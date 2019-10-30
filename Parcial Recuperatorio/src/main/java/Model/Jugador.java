@@ -42,6 +42,10 @@ public class Jugador {
 	public String getDocumento() {
 		return documento;
 	}
+	
+	public double getEdad() {
+		return LocalDate.now().getYear()-this.getFechaNacimiento().getYear();
+	}
 
 	@Override
 	public int hashCode() {

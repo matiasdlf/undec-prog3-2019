@@ -2,6 +2,7 @@ package Model;
 
 
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -67,6 +68,14 @@ public class Equipo {
 		} else if (!nombre.equals(other.nombre))
 			return false;
 		return true;
+	}
+
+	public double obtenerPromedioEdad() {
+		double suma= 0;
+		for (Jugador jugador : jugadores) {
+			suma+= jugador.getEdad();		
+		}
+		return suma/jugadores.size();
 	}
     
 }

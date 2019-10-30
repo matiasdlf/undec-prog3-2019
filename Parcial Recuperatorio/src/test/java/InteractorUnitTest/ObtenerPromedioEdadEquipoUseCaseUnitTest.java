@@ -11,6 +11,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 
+import Exceptions.EquipoIncompletoException;
+import Exceptions.JugadorAsignadoException;
 import Exceptions.JugadorIncompletoException;
 
 import java.time.LocalDate;
@@ -25,7 +27,7 @@ public class ObtenerPromedioEdadEquipoUseCaseUnitTest {
     private IRepositorioObtenerEquipo iRepositorioObtenerEquipo;
 
     @Test
-    public void obtenerPromedioEdad_EquipoConJugadores_ObtienePromedio() throws JugadorIncompletoException, EquipoIncompletoException {
+    public void obtenerPromedioEdad_EquipoConJugadores_ObtienePromedio() throws JugadorIncompletoException, EquipoIncompletoException, JugadorAsignadoException {
         Equipo elEquipo = factoryEquipo();
         when(iRepositorioObtenerEquipo.obtenerEquipoPorNombre("Barcelona")).thenReturn(elEquipo);
 
@@ -36,7 +38,7 @@ public class ObtenerPromedioEdadEquipoUseCaseUnitTest {
 
     }
 
-    private Equipo factoryEquipo() throws EquipoIncompletoException, JugadorIncompletoException {
+    private Equipo factoryEquipo() throws EquipoIncompletoException, JugadorIncompletoException, JugadorAsignadoException {
         Equipo elEquipo = Equipo.instancia(1, "Barcelona", new ArrayList<>());
         Jugador messi = Jugador.instancia(1, "Lionel Messi", LocalDate.of(1987, 6, 24), 1.7, "12345678");
         Jugador suarez = Jugador.instancia(2, "Luis Suarez", LocalDate.of(1987, 1, 24), 1.82, "87654321");
